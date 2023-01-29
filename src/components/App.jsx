@@ -29,10 +29,9 @@ export class App extends Component {
     }, 0);
   };
 
-  onBtnClick = e => {
-    const currentClick = e.target.textContent.toLowerCase();
+  onClickBtn = btn => {
     this.setState(prevState => ({
-      [currentClick]: prevState[currentClick] + 1,
+      [btn]: prevState[btn] + 1,
     }));
   };
   countPositiveFeedbackPercentage = () => {
@@ -45,7 +44,7 @@ export class App extends Component {
     const {
       countTotalFeedback,
       countPositiveFeedbackPercentage,
-      onBtnClick,
+      onClickBtn,
       state,
     } = this;
     const nameFeedback = Object.keys(state);
@@ -55,7 +54,7 @@ export class App extends Component {
         <Section title="Please, leave feedback">
           <FeedbackOptions
             options={nameFeedback}
-            onLeaveFeedback={onBtnClick}
+            onLeaveFeedback={onClickBtn}
           />
           <FeedbackText>Statistics:</FeedbackText>
           {countTotalFeedback() === 0 ? (
