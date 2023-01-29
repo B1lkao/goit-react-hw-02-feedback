@@ -52,7 +52,7 @@ export class App extends Component {
     return (
       <div>
         <GlobalStyle />
-        <Section title={'Please, leave feedback'}>
+        <Section title="Please, leave feedback">
           <FeedbackOptions
             options={nameFeedback}
             onLeaveFeedback={onBtnClick}
